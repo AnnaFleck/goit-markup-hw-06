@@ -52,6 +52,7 @@ img {
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .navigation {
@@ -66,8 +67,8 @@ img {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin-right: 76px;
   color: #4d5ae5;
+  padding: 17px 0;
 }
 
 .logo-part {
@@ -75,40 +76,7 @@ img {
 }
 
 .nav-list {
-  display: flex;
-  gap: 40px;
-}
-
-.header-menu-link {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-  padding: 24px 0;
-  display: block;
-  position: relative;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-menu-link:hover {
-  color: #404bbf;
-}
-
-.header-menu-link:focus {
-  color: #404bbf;
-}
-
-.header-menu-link.active:after {
-  content: "";
-  width: 100%;
-  height: 4px;
-  background: #404bbf;
-  position: absolute;
-  border-radius: 2px;
-  left: 0;
-  bottom: 0;
-  bottom: -1px;
+  display: none;
 }
 
 .header-menu-link.active {
@@ -117,14 +85,7 @@ img {
 }
 
 .header-address {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #434455;
-  font-style: normal;
-  margin-left: auto;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: none;
 }
 
 .header-address:hover {
@@ -135,10 +96,91 @@ img {
   color: #404bbf;
 }
 
-.address-list {
+.open-menu-btn {
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 0;
+  border: none;
+}
+
+.mob-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  padding: 24px 24px 40px 16px;
   display: flex;
+  flex-direction: column;
+  overflow: auto;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-menu-btn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 24px;
+  border-radius: 100%;
+  background-color: transparent;
+  border: 1px solid #e7e9fc;
+  fill: #2e2f42;
+}
+.mob-nav-list {
+}
+
+.mob-nav-item {
+  margin-bottom: 40px;
+}
+
+.mob-menu-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-menu-link:hover,
+.mob-menu-link:focus {
+  color: #404bbf;
+}
+
+.mob-address-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: auto;
+  margin-bottom: 48px;
+}
+
+.mob-header-address {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-header-address:hover,
+.mob-header-address:focus {
+  color: #404bbf;
+}
+
+.mob-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   gap: 40px;
 }
+
 /* ----------MAIN---------- */
 
 .section {
@@ -258,6 +300,8 @@ img {
 
 .team {
   background: #f4f4fd;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .team-title {
@@ -273,7 +317,11 @@ img {
 
 .team-list {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 72px;
+  /* gap: 24px; */
 }
 
 .team-item {
@@ -281,7 +329,7 @@ img {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   border-radius: 0 0 4px 4px;
-  width: calc((100% - 72px) / 4);
+  /* width: calc((100% - 72px) / 4); */
 }
 
 .social-icons {
@@ -344,12 +392,14 @@ img {
 }
 
 .portfolio {
-  padding: 120px 0;
+  /* padding: 120px 0; */
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .portfolio-item {
   background: #fff;
-  width: calc((100% - 48px) / 3);
+  /* width: calc((100% - 48px) / 3); */
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -384,9 +434,10 @@ img {
 
 .portfolio-list {
   display: flex;
-  gap: 24px;
+  /* gap: 24px; */
   flex-wrap: wrap;
-  row-gap: 48px;
+  /* row-gap: 48px; */
+  gap: 48px;
 }
 
 .portfolio-caption {
@@ -811,6 +862,69 @@ img {
     max-width: 768px;
   }
 
+  .open-menu-btn {
+    display: none;
+  }
+
+  .logo {
+    margin-right: 120px;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 40px;
+  }
+
+  .header-menu-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    padding: 24px 0;
+    display: block;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .header-menu-link:hover {
+    color: #404bbf;
+  }
+
+  .header-menu-link:focus {
+    color: #404bbf;
+  }
+
+  .header-menu-link.active:after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #404bbf;
+    position: absolute;
+    border-radius: 2px;
+    left: 0;
+    bottom: 0;
+    bottom: -1px;
+  }
+
+  .header-address {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+    color: #434455;
+    font-style: normal;
+    margin-left: auto;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+  }
+
+  .address-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .features-title {
     text-align: left;
   }
@@ -822,6 +936,28 @@ img {
   .features-item {
     width: calc((100% - 24px) / 2);
   }
+
+  .team-wrap {
+    width: 552px;
+  }
+
+  .team-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 64px 24px;
+  }
+
+  .team-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .portfolio-list {
+    gap: 72px 24px;
+  }
+
+  .portfolio-item {
+    width: calc((100% - 24px) / 2);
+  }
 }
 
 @media screen and (min-width: 1158px) {
@@ -829,6 +965,20 @@ img {
     max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .logo {
+    margin-right: 76px;
+  }
+
+  .address-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .header-address {
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .features-icon {
@@ -859,5 +1009,27 @@ img {
 
   .features-item {
     width: calc((100% - 72px) / 4);
+  }
+
+  .team-wrap {
+    width: 1158px;
+  }
+
+  .team-list {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .team-item {
+    width: calc((100% - 72px) / 4);
+  }
+
+  .portfolio-list {
+    gap: 24px;
+    row-gap: 48px;
+  }
+
+  .portfolio-item {
+    width: calc((100% - 48px) / 3);
   }
 }
