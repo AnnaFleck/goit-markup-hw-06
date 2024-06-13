@@ -29,13 +29,16 @@ h6 {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
-  width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ----------HEADER--------- */
@@ -212,15 +215,17 @@ img {
 
 .features-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  /* gap: 24px; */
+  gap: 72px;
 }
 
 .features-item {
-  width: calc((100% - 72px) / 4);
+  /* width: calc((100% - 72px) / 4); */
 }
 
 .features-icon {
-  display: flex;
+  /* display: flex;
   margin-bottom: 8px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
@@ -228,21 +233,23 @@ img {
   height: 112px;
   background: #f4f4fd;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  display: none;
 }
 
 .features-title {
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 36px;
   letter-spacing: 0.02em;
   color: #2e2f42;
   text-transform: capitalize;
-  line-height: 1.2;
+  line-height: 1.11;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .features-text {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -795,4 +802,62 @@ img {
 
 .policy-wrap {
   margin-bottom: 24px;
+}
+
+/* ----------------- MEDIA ---------------- */
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .features-title {
+    text-align: left;
+  }
+
+  .features-list {
+    gap: 72px 24px;
+  }
+
+  .features-item {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .features-icon {
+    display: flex;
+    margin-bottom: 8px;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    width: 264px;
+    height: 112px;
+    background: #f4f4fd;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .features-title {
+    line-height: 1.2;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .features-text {
+    font-weight: 400;
+  }
+
+  .features-list {
+    gap: 24px;
+  }
+
+  .features-item {
+    width: calc((100% - 72px) / 4);
+  }
 }
