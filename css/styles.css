@@ -183,7 +183,7 @@ img {
 /* ----------MAIN---------- */
 
 .section {
-  padding: 120px 0;
+  padding: 96px 0;
 }
 
 .hero {
@@ -519,6 +519,10 @@ img {
   margin-bottom: 72px;
 }
 
+.footer-container-social {
+  margin-bottom: 72px;
+}
+
 .footer-social-text {
   font-weight: 500;
   font-size: 16px;
@@ -535,7 +539,6 @@ img {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  margin-bottom: 72px;
   justify-content: center;
   align-items: center;
 }
@@ -1015,7 +1018,6 @@ img {
 
   .footer-text {
     width: 264px;
-    height: 112px;
   }
 
   .footer-logo {
@@ -1040,6 +1042,10 @@ img {
     max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .section {
+    padding: 120px 0;
   }
 
   .logo {
